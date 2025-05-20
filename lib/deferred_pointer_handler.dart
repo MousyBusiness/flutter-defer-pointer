@@ -33,6 +33,13 @@ class DeferredPointerHandlerState extends State<DeferredPointerHandler> {
   }
 
   @override
+  void dispose()
+  {
+    _link.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return _InheritedDeferredPaintSurface(
       state: this,
