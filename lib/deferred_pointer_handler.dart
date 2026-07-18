@@ -86,7 +86,7 @@ class _DeferredHitTargetRenderObject extends RenderProxyBox {
 
   @override
   bool hitTest(BoxHitTestResult result, {required Offset position}) {
-    for (final painter in link.painters.reversed) {
+    for (final painter in link.hitTestOrder) {
       final hit = result.addWithPaintTransform(
         transform: painter.child!.getTransformTo(this),
         position: position,
